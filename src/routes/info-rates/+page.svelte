@@ -67,6 +67,10 @@
   .rates-content {
     text-align: left;
     line-height: 1.8;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 
   .rates-content h3 {
@@ -75,25 +79,60 @@
     font-size: 1.8rem;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+    line-height: 1.3;
   }
 
   .rates-content ul {
     list-style-type: disc;
-    padding-left: 2rem;
-    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    margin: 0 0 1.5rem 0;
+    width: 100%;
   }
 
   .rates-content li {
     font-family: var(--body-font);
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0.75rem;
+    padding-right: 1rem;
   }
 
   .rates-content p {
     font-family: var(--body-font);
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .rates-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .rates-content a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .rates-content {
+      padding: 0 0.5rem;
+    }
+
+    .rates-content h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .rates-content ul {
+      padding-left: 1.25rem;
+    }
+
+    .rates-content li,
+    .rates-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
   }
 </style>

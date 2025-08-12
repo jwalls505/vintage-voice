@@ -63,14 +63,17 @@
     display: flex;
     gap: 3rem;
     align-items: flex-start;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   }
 
   .left-column {
-    flex: 0 0 350px; /* Set a fixed width for the left column */
+    flex: 1 1 350px; /* Allow column to grow and shrink, with a base width of 350px */
+    max-width: 100%; /* Ensure it doesn't overflow on mobile */
   }
 
   .right-column {
-    flex: 1;
+    flex: 2 1 400px; /* Allow column to grow and shrink, with a base width of 400px */
+    min-width: 0; /* Prevent flex item from overflowing container */
   }
 
   .bio-image {
@@ -78,6 +81,7 @@
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.5rem; /* Add space below image on mobile */
   }
 
   .equipment-section {
@@ -86,9 +90,9 @@
 
   .equipment-title {
     font-family: var(--heading-font);
-    font-size: 2rem;
+    font-size: 1.8rem; /* Slightly smaller on all screens */
     color: var(--title-bg-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem; /* Increased space below title */
     font-weight: normal;
   }
 
@@ -96,13 +100,57 @@
     font-family: var(--body-font);
     font-style: italic;
     color: #555;
-    margin: 0.25rem 0;
+    margin: 0.5rem 0; /* Slightly more space between equipment items */
     line-height: 1.5;
+    font-size: 0.95rem;
   }
 
   .right-column p {
     margin-bottom: 1.5rem;
     font-family: var(--body-font);
     font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .bio-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .left-column,
+    .right-column {
+      flex: 1 1 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .bio-image {
+      max-width: 400px;
+      margin: 0 auto 1.5rem; /* Center the image on mobile */
+      display: block;
+    }
+
+    .equipment-section {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .equipment-title {
+      font-size: 1.6rem;
+    }
+
+    .right-column p {
+      font-size: 1rem;
+      text-align: left;
+    }
   }
 </style>
